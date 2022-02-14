@@ -1,0 +1,28 @@
+Part 1: 30
+----------
+5 - MessageFragment class created and declared successfully.
+5 - MessageFragment fields set up properly (letter and next), constructor works to initialize the class.
+5 - MessageQueue class created and declared successfully.
+10 - MessageQueue fields set up properly (inUse, size, head, tail, sendReceive), constructor works to initialize the class.
+5 - clear() works to reset the fields back to their initial values.
+
+Part 2: 25
+----------
+10 - getStatus() works using int num, and returns the right string based on inUse.
+15 - poll() works to remove, return, and update the head of the queue.
+
+Part 3: 25
+-----------
+5 - enqueue() throws IllegalStateException if inUse is true.
+5 - enqueue() sets the values of inUse and sendReceive properly
+5 - enqueue() correctly loops over every character of the message
+5 - enqueue() handles the empty queue case properly
+5 - enqueue() handles the non-empty queue case properly
+
+Part 4: 15
+----------
+5 - demo program sets up an initialized empty MessageQueue
+5 - demo program gets the message and username information from the user
+5 - demo program correctly uses the getStatus, enqueue, and head/tail references
+
+5 - Does the submission work? (Does it compile and run? Are there any problematic programming choices? etc.)
