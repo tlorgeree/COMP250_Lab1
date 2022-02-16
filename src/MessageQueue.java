@@ -33,6 +33,10 @@ public class MessageQueue {
     public void enqueue(String message, String _sendReceive)throws IllegalStateException{
         if (inUse) throw new IllegalStateException("Queue in use."
                 +size + " characters remaining.");
+        if (message.length() == 0){
+            System.out.println("Received an empty string. Nothing added to queue.");
+            return;
+        }
         inUse = true;
         sendReceive = _sendReceive;
         char[] c_message = message.toCharArray();
