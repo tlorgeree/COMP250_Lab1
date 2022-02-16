@@ -13,10 +13,10 @@ public class MessageQueue {
 
     public String getStatus(int num){
         if (inUse) return "Queue #"+ num
-        +": Available";
-        else return "Queue #"+ num
                 +": Unavailable.\n" + size
                 + " characters remaining.";
+        else return "Queue #"+ num
+                +": Available";
     }
 
     public MessageFragment poll(){
@@ -29,6 +29,24 @@ public class MessageQueue {
             --size;
         }
         return currHead;
+    }
+    public void enqueue(String message, String _sendReceive)throws IllegalStateException{
+        if (inUse) throw new IllegalStateException("Queue in use."
+                +size + " characters remaining.");
+        inUse = true;
+        sendReceive = _sendReceive;
+        char[] c_message = message.toCharArray();
+        for (char c: c_message) {
+            if (size == 0){
+                head = new MessageFragment(c,null);
+                tail = head;
+            }else{
+                tail.nextFragment = new MessageFragment(c,null);
+                tail = tail.nextFragment;
+            }
+            ++size;
+        }
+
     }
 
 
